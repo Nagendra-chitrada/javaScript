@@ -1,0 +1,76 @@
+<Doctype Html>
+<html>
+<head>
+	<title>  Atm Banking</title>
+	
+</head>.
+<body>
+	<h1 align="center"> welcome to World Bank of India</h1>
+		
+		
+<script>
+	
+	var condition=true;
+	const Ac1=986644,Ac2=961871;
+	const Psd1=2002,Psd2=1919;
+	var bal1=10000,bal2=0, balance;
+	
+    while(condition){
+    	var uAc=prompt("Enter Account number","");
+	if(uAc==Ac1||uAc==Ac2){
+		var uPwd=prompt("Enter the password","");
+		if(uAc==Ac1 && uPwd==Psd1||uAc==Ac2&&uPwd==Psd2){
+			if(uAc==Ac1){
+				 balance=bal1;
+			}else{
+			balance=bal2;
+			}
+			
+		for(let i=0;i>=0;i++){
+		var co =prompt("choose options\n"+"1.Balance enquire \n"+"2.Withdraws \n"+"3.Deposites \n"+"4.exit","");
+		console.log(co);
+		switch(co){
+			case "1":
+				
+				alert("Balance in your Account"+balance);
+			
+				break;
+			case "2":
+			 	let amount =parseInt(prompt("enter amount",""));
+			 	balance>amount?
+				balance-=amount:alert("Insufficient balance");
+				console.log("your Ac Balane"+balance);
+				break;
+			case "3":
+				let amount1= parseInt(prompt("enter Deposite",""));
+				
+				balance+=amount1;
+				document.write("your Ac Balane",balance);
+				
+				
+				break;
+			case "4":
+				alert ("Thankyou...\n Visit Again..");
+				break;
+			default:
+				alert("Invalid Option");
+		}
+			if(co==4){
+			break;
+			}
+		
+		
+		}
+		}
+		else{
+		alert("Invalid Password");
+		}
+	
+	}
+	 else{
+	alert("Invalid AccountNumber");
+	}
+  }
+</script>
+</body>
+</html>
