@@ -44,6 +44,8 @@ button:hover{
 }
 .contentBody{
 	background-color:#224aba;
+	width:1400px;
+	margin:auto;
 }
 .details{
 	float:left;
