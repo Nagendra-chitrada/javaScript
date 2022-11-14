@@ -9,9 +9,9 @@ var loginpage=document.querySelector(".login");
 var optionsPage=document.querySelector("#mainpage2");
 var Acholder=document.getElementById("acHolder");
 var acBalance=document.getElementById("balance");
-var btnWithdraw=document.querySelector("withdrawBox");
-var btnDeposite=document.querySelector("depositeBox");
-var btnTransaction=document.querySelector("transactionBox");
+var btnWithdraw=document.querySelector(".withdrawBox");
+var btnDeposite=document.querySelector(".depositeBox");
+var btnTransaction=document.querySelector(".transactionBox");
 
 
 
