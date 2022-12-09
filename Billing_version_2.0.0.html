@@ -1,0 +1,78 @@
+<!Doctype HTML>
+<HTML>
+<head>
+	<title>billing 2  </title>
+</head>
+<body>
+	<h1>billing</h1>
+	<button onclick="itemslist()">click here to enter</button>
+	<script>
+	var products=[];
+	var cart='',productList='';
+	var c,bill=0,count=0;
+function itemslist(){
+	for(let i=0;true;i++)
+	{
+	let Items=prompt("enter products name:");
+	if(Items=="end"){
+	break;
+	}
+	products.push({ItemName:Items,price:parseInt(prompt("enter price:"))});
+	
+	
+	console.log(products);
+	
+	}
+	for(let j=0;j<products.length;j++){
+	productList+=(`${j+1} -${products[j].ItemName}-RS..${products[j].price}\n`);
+	
+	}
+		for(let k=0;true;k++){
+		c=prompt("you selected products:\n"+productList);
+		if(c=="0")
+			break;
+		c=c<productList.length?c:alert("no product with this productNumber");
+		cart+=(`${k+1} -${products[c-1].ItemName}-RS..${products[c-1].price}\n`);
+		bill+=products[c-1].price;
+		count++;
+		
+		}
+	 
+	document.write("<br> your cart products:\n"+cart);
+	
+	console.log(cart);
+	console.log(bill);
+	billing();
+}	
+  function billing(){
+        
+       
+           
+                if(bill>=2000&&count>=5){
+               
+                console.log(`total bill with 20%-discount:${bill-(bill*0.2)}`);
+                document.write(`total bill with 20%-discount:${bill-(bill*0.2)}`);
+             console.log(bill-(bill*0.2));
+           	
+           } 
+             
+                else if(bill>=2000){
+                console.log("10%");
+               console.log(bill-(bill*0.1));
+             
+            }
+            
+                else{
+                console.log("no discount");
+             console.log(bill);
+            	
+            }
+			document.write(<br>);
+			document.write("your Bill:"+bill);
+            }
+        
+
+	
+	</script>
+</body>
+</html>
