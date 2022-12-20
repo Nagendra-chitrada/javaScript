@@ -54,7 +54,7 @@ async function addBill(id){
     </tr>`
     
     BillTotal.textContent=billAmount;
-    displayBill();
+    // displayBill();
 
     }
 
@@ -97,7 +97,7 @@ async function displayBill(){
     
     
 }
-displayBill();
+// displayBill();
 
 function tax(){
     let tax= (Totalbill*0.4);
