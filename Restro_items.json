@@ -1,0 +1,92 @@
+{
+  "items": [
+    {
+      "name": "Chapathi",
+      "price": 30,
+      "id": 1
+    },
+    {
+      "name": "Idle",
+      "price": 20,
+      "id": 2
+    },
+    {
+      "name": "Dosa",
+      "price": 30,
+      "id": 3
+    },
+    {
+      "name": "Wada",
+      "price": 25,
+      "id": 4
+    },
+    {
+      "name": "Puri",
+      "price": 30,
+      "id": 5
+    },
+    {
+      "name": "Veg Fried Rice",
+      "price": 80,
+      "id": 6
+    },
+    {
+      "name": "Non veg Fried Rice",
+      "price": 110,
+      "id": 7
+    },
+    {
+      "name": "Veg Biryani",
+      "price": 90,
+      "id": 8
+    },
+    {
+      "name": "Non Veg Biryani",
+      "price": 150,
+      "id": 9
+    },
+    {
+      "name": "Meals",
+      "price": 70,
+      "id": 10
+    }
+  ],
+  "Order": [
+    {
+      "name": "Wada",
+      "price": 25,
+      "quantity": 1,
+      "id": 1
+    },
+    {
+      "name": "Veg Biryani",
+      "price": 90,
+      "quantity": 1,
+      "id": 2
+    },
+    {
+      "name": "Wada",
+      "price": 25,
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "name": "Wada",
+      "price": 25,
+      "quantity": 1,
+      "id": 4
+    },
+    {
+      "name": "Wada",
+      "price": 25,
+      "quantity": 1,
+      "id": 5
+    },
+    {
+      "name": "Chapathi",
+      "price": 30,
+      "quantity": 1,
+      "id": 6
+    }
+  ]
+}
