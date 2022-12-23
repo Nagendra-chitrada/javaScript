@@ -12,18 +12,21 @@
    <span>current</span> -->
 
 <section class="orders"> 
-   
+    <button class="btn-order">ORDERS </button>
+    <button class="btn-current">CURRENT</button>
 </section>
 
-<section class="current clearfix" id="currentRecipies">
+
+
+<section class="current clearfix ">
     <div class="block-recipe">
     </div>
-    
-
+   
+    <button class="clear-bill">CLEAR</button>
     <div class="block-bill">
-
-        Name <input type="text"><br>
-        phone <input type="text">
+        <br>
+        Name <input type="text" class="name"><br>
+        phone <input type="text" class="phone">
         <table>
             <tr>
                 <th>
@@ -40,29 +43,52 @@
             <tbody class="dis-tax">
                 <tr>
                 <th>Discount</th>
-                <td><input type="text" class="discount">%</td>
+                <td><input type="text" value="0" oninput="totalcharge()" class="discount">%</td>
                 </tr>
                 <tr>
                 <th>taxes</th>
                 <td>(4% of total)</td>
+                <td id="tax"></td>
             </tr></tbody>
-            
-            <tbody class="total-bill"><tr>
-    <th>
-        Total
-    </th>
-    <td></td>
-    <td id="totalBill">00.00
-
-    </td>
-</tr></tbody>
+          
 
         </table>
-        <button>OrderTickets</button>
-        <button>Charge bill</button>
+        <button id="OrderPlaced">OrderTickets</button>
+        <button>Charge bill(<span id="charge">00</span>)</button>
     </div>
     
 </section>
-    <script src="Restro_billing.js"></script>
+
+<section class="div-order model">
+
+    <div class="ordr-bill-table">
+        <table>
+            <tr>
+                <th>
+                   SL.NO 
+                </th>
+                <TH>
+                    Name
+                </TH>
+                <th>
+                    OrderValue
+                </th>
+                <th>
+
+                </th>
+            </tr>
+            <tbody class="details-order"></tbody>
+        </table>
+    </div>
+    <div class="order-bill-details">
+        <table >
+            <tbody class="customer-details"></tbody>
+
+            </tr>
+        </table>
+    </div>
+
+</section>
+    <script src="Restro.js"></script>
 </body>
 </html>

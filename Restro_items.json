@@ -51,90 +51,165 @@
       "id": 10
     }
   ],
-  "Order": [
+  "ORDERS": [
     {
-      "name": "Chapathi",
-      "price": 30,
-      "quantity": 1,
+      "CustomerName": "chandini",
+      "PhoneNumber": "9865986595",
+      "Orderdetails": [
+        {
+          "Item": "Chapathi",
+          "quantity": "5",
+          "price": 30,
+          "id": 1,
+          "Orderprice": 150
+        },
+        {
+          "Item": "Veg Fried Rice",
+          "quantity": 1,
+          "price": 80,
+          "id": 6,
+          "Orderprice": 80
+        },
+        {
+          "Item": "Dosa",
+          "quantity": "5",
+          "price": 30,
+          "id": 3,
+          "Orderprice": 150
+        }
+      ],
+      "OrderPrice": 395.2,
       "id": 1
     },
     {
-      "name": "Puri",
-      "price": 30,
-      "quantity": 1,
+      "CustomerName": "sujitha",
+      "PhoneNumber": "9865323265",
+      "Orderdetails": [
+        {
+          "Item": "Chapathi",
+          "quantity": "5",
+          "price": 30,
+          "id": 1,
+          "Orderprice": 150
+        },
+        {
+          "Item": "Meals",
+          "quantity": "2",
+          "price": 70,
+          "id": 10,
+          "Orderprice": 140
+        }
+      ],
+      "OrderPrice": 301.6,
       "id": 2
     },
     {
-      "name": "Non Veg Biryani",
-      "price": 150,
-      "quantity": 1,
-      "id": 3
-    },
-    {
-      "name": "Meals",
-      "price": 70,
-      "quantity": 1,
+      "CustomerName": "akhila",
+      "PhoneNumber": "9865323265",
+      "Orderdetails": [
+        {
+          "Item": "Veg Biryani",
+          "quantity": 1,
+          "price": 90,
+          "id": 8,
+          "Orderprice": 90
+        },
+        {
+          "Item": "Wada",
+          "quantity": 1,
+          "price": 25,
+          "id": 4,
+          "Orderprice": 25
+        },
+        {
+          "Item": "Dosa",
+          "quantity": 1,
+          "price": 30,
+          "id": 3,
+          "Orderprice": 30
+        }
+      ],
+      "OrderPrice": 150.8,
       "id": 4
     },
     {
-      "name": "Non veg Fried Rice",
-      "price": 110,
-      "quantity": 1,
+      "CustomerName": "akhil",
+      "PhoneNumber": "9544561564",
+      "Orderdetails": [
+        {
+          "Item": "Veg Biryani",
+          "quantity": 1,
+          "price": 90,
+          "id": 8,
+          "Orderprice": 90
+        },
+        {
+          "Item": "Dosa",
+          "quantity": 1,
+          "price": 30,
+          "id": 3,
+          "Orderprice": 30
+        },
+        {
+          "Item": "Wada",
+          "quantity": 1,
+          "price": 25,
+          "id": 4,
+          "Orderprice": 25
+        },
+        {
+          "Item": "Non Veg Biryani",
+          "quantity": 1,
+          "price": 150,
+          "id": 9,
+          "Orderprice": 150
+        },
+        {
+          "Item": "Puri",
+          "quantity": 1,
+          "price": 30,
+          "id": 5,
+          "Orderprice": 30
+        },
+        {
+          "Item": "Meals",
+          "quantity": 1,
+          "price": 70,
+          "id": 10,
+          "Orderprice": 70
+        }
+      ],
+      "OrderPrice": 410.8,
       "id": 5
     },
     {
-      "name": "Meals",
-      "price": 70,
-      "quantity": 1,
+      "CustomerName": "santosh",
+      "PhoneNumber": "3265326532",
+      "Orderdetails": [
+        {
+          "Item": "Chapathi",
+          "quantity": "2",
+          "price": 30,
+          "id": 1,
+          "Orderprice": 60
+        },
+        {
+          "Item": "Dosa",
+          "quantity": "5",
+          "price": 30,
+          "id": 3,
+          "Orderprice": 150
+        },
+        {
+          "Item": "Non Veg Biryani",
+          "quantity": "3",
+          "price": 150,
+          "id": 9,
+          "Orderprice": 450
+        }
+      ],
+      "OrderPrice": 617.76,
       "id": 6
-    },
-    {
-      "name": "Chapathi",
-      "price": 30,
-      "quantity": 1,
-      "id": 7
-    },
-    {
-      "name": "Dosa",
-      "price": 30,
-      "quantity": 1,
-      "id": 8
-    },
-    {
-      "name": "Wada",
-      "price": 25,
-      "quantity": 1,
-      "id": 9
-    },
-    {
-      "name": "Dosa",
-      "price": 30,
-      "quantity": 1,
-      "id": 10
-    },
-    {
-      "name": "Non veg Fried Rice",
-      "price": 110,
-      "quantity": 1,
-      "id": 11
-    },
-    {
-      "name": "Meals",
-      "price": 70,
-      "quantity": 1,
-      "id": 12
-    },
-    {
-      "name": "Non veg Fried Rice",
-      "price": 110,
-      "quantity": 1,
-      "id": 13
-    },
-    {
-      "name": "Wada",
-      "price": 25,
-      "quantity": 1,
-      "id": 14
     }
   ]
 }
