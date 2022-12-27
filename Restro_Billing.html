@@ -9,11 +9,16 @@
 </head>
 <body>
  <!--   <span>order</span>  
-   <span>current</span> -->
+<header>
+    <h1>Elight <sub>light food -grate food</sub></h1>
+</header>
+
+
 
 <section class="orders"> 
     <button class="btn-order">ORDERS </button>
     <button class="btn-current">CURRENT</button>
+     <button class="clear-bill">CLEAR</button>
 </section>
 
 
@@ -22,7 +27,7 @@
     <div class="block-recipe">
     </div>
    
-    <button class="clear-bill">CLEAR</button>
+   
     <div class="block-bill">
         <br>
         Name <input type="text" class="name"><br>
@@ -44,7 +49,8 @@
                 <tr>
                 <th>Discount</th>
                 <td><input type="text" value="0" oninput="totalcharge()" class="discount">%</td>
-                </tr>
+                <td></td>
+            </tr>
                 <tr>
                 <th>taxes</th>
                 <td>(4% of total)</td>
@@ -80,12 +86,14 @@
             <tbody class="details-order"></tbody>
         </table>
     </div>
-    <div class="order-bill-details">
-        <table >
-            <tbody class="customer-details"></tbody>
 
-            </tr>
-        </table>
+    <div class="order-bill-details">
+       
+            <h2 align="center">Order Summary</h2>
+            <div class="customer-details"></div>
+               
+           
+   
     </div>
 
 </section>

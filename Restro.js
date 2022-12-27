@@ -160,13 +160,12 @@ let orderdetails=await ordersdata.json();
 console.log(orderdetails);
 ORDERdetails.innerHTML='';
 for(let k in orderdetails){
-   Customers.push(orderdetails[k].Orderdetails);
 ORDERdetails.innerHTML+=`
 <tr>
 <td>${parseInt(k)+1}</td>
 <td>${orderdetails[k].CustomerName}</td>
 <td>${orderdetails[k].OrderPrice}</td>
-<td><button onclick="viewDetails(${k})">VIEW</button></td>
+<td><button onclick="viewDetails(${orderdetails[k].id})">VIEW</button></td>
 </tr>`
 }
 
@@ -174,19 +173,27 @@ ORDERdetails.innerHTML+=`
 
 }
 async function viewDetails(orderid){
-   console.log( Customers);
-  console.log( Customers[orderid][0]);
-   console.log("its working "+orderid);
-   CustomerDetails.innerHTML=``;
-   for(i of Customers[orderid]){
-CustomerDetails.innerHTML+=`
-<tr>
-<td> ${Customers[i].item}</td>
+   let detailsoforder= await fetch(`${ORDER}/${orderid}`);
+   let Orderdetails= await detailsoforder.json();
 
-</tr>
-<tr>
-<td></td>
-</tr>`
+  
+   console.log(Orderdetails);
+   CustomerDetails.innerHTML=`
+   <b>Name:</b>  <span class="name"> ${Orderdetails.CustomerName} <br>
+   <b>phone:</b> ${Orderdetails.PhoneNumber}<br>
+   <b> ITEMS:</b><br>
+  <span class="items"></span><br>
+  TAX(4% Gst.)
+  <b>Charge:</b>${Orderdetails.OrderPrice}<br>
+  <p>*taxes apply as per rules</p>
 
-   }
+   `;
+   for (i in Orderdetails.Orderdetails){
+      document.querySelector(`.items`).innerHTML+=`
+      
+         <b>${Orderdetails.Orderdetails[i].Item}</b>&nbsp&nbsp&nbsp&nbsp&nbsp
+          ${Orderdetails.Orderdetails[i].price}*${Orderdetails.Orderdetails[i].quantity}
+        =${Orderdetails.Orderdetails[i].Orderprice}<br>`;
+      
+      }
 }

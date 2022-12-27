@@ -1,0 +1,22 @@
+<html>
+
+    <script>
+        var array=[];
+        array.push({name:"fish",quantity:1,price:50});
+        change();
+        function change(){
+            for (i in array){
+                if(array[i].name=="fish"){
+                    array[i].quantity=2;
+                    array[i].price=(array[i].quantity*array[i].price);
+
+                }
+                else{
+                    console.log("it not working")
+                }
+            }
+
+        }
+
+    </script>
+</html>

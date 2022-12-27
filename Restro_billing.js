@@ -4,25 +4,28 @@ const ORDER=`${BASIC_URL}Order`
 const BlockRecipe=document.querySelector('.block-recipe');
 const BillBody=document.querySelector('.recipe-bill');
 const BillTotal=document.querySelector("#totalBill");
-
+var orderItems=[];
 
 var billAmount=0;
 var count=0;
+
 
 showRecipe();
 
 async function showRecipe(){
  recipies= await fetch(ITEMS);
-recipeData= await recipies.json();
-console.log(recipeData);
-for(i in recipeData){
+orderList= await recipies.json();
+
+console.log(orderList);
+for(i in orderList){
     BlockRecipe.innerHTML+=`
-        <button class="recipie" onclick="addBill(${recipeData[i].id})">
-        <h4>${recipeData[i].name}</h4>
-        <p>${recipeData[i].price}.00</p>
+        <button class="recipie" onclick="addBill(${orderList[i].id})">
+        <h4>${orderList[i].name}</h4>
+        <p>${orderList[i].price}.00</p>
         </button>`
 
 }
+
 }
 
 async function addBill(id){
@@ -31,15 +34,17 @@ async function addBill(id){
     console.log(recipeData);
     billAmount+=recipeData.price;
     console.log(billAmount);
+    orderItems.push(recipeData,{quantity:1});
+    console.log(orderItems)
  
-    order=await fetch(ORDER,{
-        method:"POST",
-        headers:{"Content-type":"application/json"},
-        body:JSON.stringify({"name":recipeData.name,
-                            "price":recipeData.price,
-                        "quantity":1})
-    })
-    console.log();
+    // order=await fetch(ORDER,{
+    //     method:"POST",
+    //     headers:{"Content-type":"application/json"},
+    //     body:JSON.stringify({"name":recipeData.name,
+    //                         "price":recipeData.price,
+    //                     "quantity":1})
+    // })
+    // console.log();
     
    
 
@@ -63,13 +68,14 @@ function price(id,price){
      individualBill=document.querySelector(`.a${id}`).value;
      indBill+=(individualBill*price);
     recipiPrice=document.querySelector(`.price-${id}`);
-    recipiPrice.textContent=indBill;
     billAmount+=indBill;
-    patching(id);
+    recipiPrice.textContent=indBill;
+    BillTotal.textContent=billAmount+billAmount;
+    
 }
 
 
-async function patching( id){
+/* async function patching( id){
     count++;
     orderItem=await fetch(`${ORDER}/${id}`,{
         method:"patch",
@@ -77,7 +83,7 @@ async function patching( id){
         body:JSON.stringify({"quantity":count})
     })
 
-}
+} */
 
 async function displayBill(){
      showBill=await fetch(ORDER);
@@ -100,5 +106,5 @@ async function displayBill(){
 // displayBill();
 
 function tax(){
-    let tax= (Totalbill*0.4);
+   tax= (billAmount*0.4);
 }

@@ -4,11 +4,12 @@
     box-sizing: border-box;
 }
 body{
-    background: linear-gradient(#dd0000c4,#a2cce573,#f193d4e3);
+    /* background: linear-gradient(#dd0000c4,#a2cce573,#f193d4e3); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: absolute;
-    top: 100px;
+    
+    width: 100%;
 }
 .model{
     display: none;
@@ -21,6 +22,11 @@ body{
 .current{
     width: 100%;
     
+}
+.orders{
+    position: relative;
+    margin-top: 30px;
+
 }
 .recipie{
     width: 150px;
@@ -42,16 +48,20 @@ body{
     float: left;
     
 }
+.block-bill>table,td{
+    border: 2px solid black;
+}
+
 .block-bill>input{
     width: 80%;
     font-size: 20px;
     margin: 3px;
 }
 .block-bill>button{
-   
     width: 48%;
     height: 30px;
     margin: 3px 0px;
+    background-color: #8670e6;
 
 }
 th{
@@ -91,15 +101,16 @@ input{
     height: 50px;
 }
 .div-order{
-    width: 100%;height: 100%;
-    border-radius: 5px solid green ;
-    background-color: orange;
+    width: 100%;
+    height: 100%;
+    
+    background-color: #e5e0d8;
 }
 sup{
     background-color: blueviolet;
     color: white;
     height: 20px;width: 20px;
-    border-radius: ;
+   
 }
 td{
  
@@ -107,10 +118,22 @@ td{
     width: 32%;
 }
 .order-bill-details>table{
-    background-color: aqua;
- 
-    float: left;
+    
+   
+    width: 80%;
+    margin: 30px auto;
+    position: relative;
+    top: 50px;
+    left: 50px;
+
 }
 .ordr-bill-table{
-    float: left;
+    
+}
+.customer-details{
+    position: relative;
+    text-align: center;
+}
+.name{
+    text-transform: capitalize;
 }
