@@ -1,0 +1,119 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.clearfix::after{
+    clear: both;
+    display: block;
+    content: '';
+}
+.container{
+    width: 1200px;
+    margin: 0px auto;
+    /* background-color: #FFBE9D; */
+    padding: 0px;
+}
+header{
+    position: relative;
+    width: 100%;
+    top: 20px;
+    left: 100px;
+    margin: 0px auto;
+
+}
+figure{
+    float: left;
+    position: relative;
+}
+.nav-options{
+    position: relative;
+    float: left;
+    top: 7px;
+    left: 125px;
+}
+.nav-options>li{
+    float: left;
+    position: relative;
+    list-style: none;
+    text-transform: capitalize;
+    padding: 10px;
+    font-size: 20px;
+   
+   
+}
+.nav-home{
+    color:#FF5300;
+}
+.nav-lets-talk{
+    float: left;
+    position: relative;
+    left: 100px;
+    padding: 5px;
+
+}.nav-lets-talk>button{
+    padding: 12px;
+    text-transform: capitalize;
+    font-size: 20px;
+    position: relative;
+    left: 25px;
+    border-radius: 5px;
+    border: 1.5px solid black;
+    background-color: transparent;
+}
+.our-services{
+    position: relative;
+    width: 97%;
+    /* background-color: beige; */
+    top: 30px;
+    margin: 0px auto;
+    padding: 10px;
+}
+.services{
+    border: 2px solid #bfbfbf73;
+    width: 370px;
+    padding: 10px;
+    float: left;
+    /* height: 300px; */
+    border-radius: 10px;
+    background-color: white;
+    margin: 5px;
+}.services>img{
+    padding: 5px;
+}
+.services>h1{
+    color: #02020226;
+    font-size: 80px;
+    float: right;
+}
+.sub-title{
+    font-size: 10px;
+    margin: 6px 0px;
+}
+h2{
+    text-align: center;
+    font-size: 39.06px;
+    line-height: 58px;
+}
+h5{
+    text-align: center;
+    color: orangered;
+}
+h3{
+    text-transform: capitalize;
+}
+.div--testmonial{
+    position: relative;
+    top: 20px;
+}
+hr{
+   
+}
+.img-number{
+    float: right;
+}
+.div--reviews{
+    width: 95%;
+    margin: 0px auto;
+}
