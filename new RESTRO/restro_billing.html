@@ -5,30 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="restro_billing.css">
-    <title>RESTAURENT BILLING</title>
+    <title>Resterent Billing System</title>
 </head>
 <body>
-    <div class="clear container">
-        <section>
-            <button>
-                <h4>IDLY</h4>
-                <p>20.00</p>
-            </button>
-            <button>
-                <h4>IDLY</h4>
-                <p>20.00</p>
-            </button>
-            <button>
-                <h4>IDLY</h4>
-                <p>20.00</p>
-            </button>
-            <button>
-                <h4>IDLY</h4>
-                <p>20.00</p>
-            </button>
-        </section>
+  
+<header>
+    <h1>Elight <sub>light food -grate food</sub></h1>
+</header>
+
+
+
+<section class="orders"> 
+    <button class="btn-order">ORDERS </button>
+    <button class="btn-current">CURRENT</button>
+     <button class="clear-bill">CLEAR</button>
+</section>
+
+
+
+<section class="current clearfix ">
+    <div class="block-recipe">
+    </div>
+   
+   
+    <div class="block-bill">
+        <br>
+        Name <input type="text" class="name"><br>
+        phone <input type="text" class="phone">
+        <table>
+            <tr>
+                <th>
+                   Items 
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Price
+                </th>
+            </tr>
+            <tbody class="recipe-bill"></tbody>
+            <tbody class="dis-tax">
+                <tr>
+                <th>Discount</th>
+                <td><input type="text" value="0" oninput="totalcharge()" class="discount">%</td>
+                <td></td>
+            </tr>
+                <tr>
+                <th>taxes</th>
+                <td>(4% of total)</td>
+                <td id="tax"></td>
+            </tr></tbody>
+          
+
+        </table>
+        <button id="OrderPlaced">OrderTickets</button>
+        <button>Charge bill(<span id="charge">00</span>)</button>
     </div>
     
-    <script src="restro_billing.js"></script>
+</section>
+
+<section class="div-order model">
+
+    <div class="ordr-bill-table">
+        <table>
+            <tr>
+                <th>
+                   SL.NO 
+                </th>
+                <TH>
+                    Name
+                </TH>
+                <th>
+                    OrderValue
+                </th>
+                <th>
+
+                </th>
+            </tr>
+            <tbody class="details-order"></tbody>
+        </table>
+    </div>
+
+    <div class="order-bill-details">
+       
+            <h2 align="center">Order Summary</h2>
+            <div class="customer-details"></div>
+               
+           
+   
+    </div>
+
+</section>
+    <script type="module" src="./restro_billing.js"></script>
 </body>
 </html>
+
