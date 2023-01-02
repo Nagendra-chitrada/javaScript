@@ -3,6 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+:root{
+    --bs-primary
+}
 .fix::after{
     display: block;
     clear: both;
@@ -45,7 +48,6 @@ nav ul li{
     background-color: wheat;
     float: left;
     top: 50px;
-    border: 2px solid blue;
     margin: 0;
     padding: 10px 0px;
 }

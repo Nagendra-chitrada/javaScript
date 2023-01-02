@@ -12,7 +12,7 @@
 .container{
     width: 1200px;
     margin: 0px auto;
-    /* background-color: #FFBE9D; */
+    background-color: #FFBE9D;
     padding: 0px;
 }
 header{
@@ -106,6 +106,10 @@ h3{
 .div--testmonial{
     position: relative;
     top: 20px;
+    padding: 10px;
+    margin: 10px auto;
+    width: 95%;
+    border: 3px solid blue;
 }
 hr{
    
@@ -113,7 +117,24 @@ hr{
 .img-number{
     float: right;
 }
-.div--reviews{
-    width: 95%;
-    margin: 0px auto;
+.div-client-reviews{
+    width: 350px;
+    height: 250px;
+    margin: 5px 5px;
+    padding: 25px;
+    float: left;
+    border-radius: 5px;
+    background-color: white;
+}
+.div-client-reviews>p{
+font-weight: 400;
+
+}
+.profile{
+    width: 90%;
+    padding: 10px 0px;
+}
+.profile>img,h4{
+    float: left;
+    margin: 0px 5px;
 }
