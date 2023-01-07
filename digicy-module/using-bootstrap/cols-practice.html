@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colums and grid of bootstrap</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        
+        .h{
+          height:   500px;
+        }
+    </style>
+
+</head>
+<body>
+    
+<div class="container bg-danger border clearfix p-1">
+    <div class="col-12">this is col-12  (100%) <h1>1</h1></div>
+        <div class="border  col-12 clearfix bg-primary p-3"> 
+            <div class="col-12">this is col-12  (100%)<h1>2</h1></div>
+            <div class="col-6 p-3 clearfix bg-success">
+                <div class="col-12">this is col-12  (100%)<h1>3</h1></div>
+                <div class="col-6 clearfix bg-dark">
+                    <div class="col-12">this is col-12  (100%)<h1 class="bg-primary">4</h1></div>
+                    <div class="col-6 h bg-danger">
+                        <div class="col-12">this is col-12  (100%)<h1>5</h1></div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+</div>
+</body>
+</html>

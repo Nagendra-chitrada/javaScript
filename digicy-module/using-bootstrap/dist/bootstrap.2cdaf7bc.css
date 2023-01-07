@@ -1,0 +1,120 @@
+* {
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+:root {
+  --primary-color: #ff5300;
+  --bg-color: #fff7f4;
+  --standerd-color: black;
+}
+
+.bg-color {
+  background-color: var(--primary-color);
+}
+
+h2 {
+  font-size: 38px;
+}
+
+li {
+  list-style: none;
+}
+
+.text-theam {
+  color: var(--primary-color);
+}
+
+.main {
+  background-color: var(--bg-color);
+  padding: 10px 0;
+}
+
+.div-nav-ul {
+  float: right;
+  position: relative;
+  top: 10px;
+  right: 50px;
+}
+
+.btn-talk {
+  border: 1.5px solid var(--standerd-color);
+  background-color: #0000;
+  border-radius: 5px;
+  padding: 1% 1.5%;
+  position: relative;
+  right: 4%;
+}
+
+li:first-child > a {
+  color: var(--primary-color);
+}
+
+p {
+  font-size: 12px;
+}
+
+.link {
+  color: var(--standerd-color);
+  font-weight: 400;
+}
+
+.btn-site-primary {
+  background-color: var(--primary-color);
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.sub-title {
+  font-size: 12px;
+}
+
+.sub-title-2 {
+  margin: 26px 2px 0 0;
+}
+
+.site-pic-position {
+  margin: 100px 10px;
+  position: relative;
+}
+
+.home-page {
+  top: 150px;
+}
+
+.service {
+  background-color: #fff;
+  border: 2px solid #f5f5f5;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.div-head {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--primary-color);
+  margin: 0 auto;
+  padding: 1px 27px;
+  position: relative;
+}
+
+.div-service {
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.arows {
+  position: relative;
+  top: 110px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+.aboutus > li {
+  line-height: 2;
+  list-style-image: url("checkbox-circle-fill.020b5d3a.png");
+}
+
+/*# sourceMappingURL=bootstrap.2cdaf7bc.css.map */
