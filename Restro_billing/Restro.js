@@ -1,0 +1,205 @@
+//-------CONFIGURATIONS OF API-ADDRESSES-----
+const BASIC_URL=`http://localhost:3000/`;
+const ITEMS=`${BASIC_URL}items`
+const ORDER=`${BASIC_URL}ORDERS`
+//------------TABLE-BLOCK-ELEMENTS-----
+const BlockRecipe=document.querySelector('.block-recipe');//the block where showed the items menu 
+const BillBody=document.querySelector('.recipe-bill');//block where the billing 
+const BillTotal=document.querySelector("#charge");//td of bill in billing table
+const TAX=document.querySelector('#tax');//td of tax in billing table
+const ORDERdetails=document.querySelector('.details-order');//where shows the details of the order
+
+//  DIVISIONs with respective blocks
+const currentDIV=document.querySelector('.current');//recipie item-button showed block
+const orderDIV=document.querySelector('.div-order');//block which shows the list of orders 
+
+const OrderView=document.querySelector('.order-bill-details');
+const CustomerDetails=document.querySelector('.customer-details');
+//--------------------BUTTONS------
+const btnClear=document.querySelector('.clear-bill');
+const BTNcurrent=document.querySelector('.btn-current');
+const BTNorder=document.querySelector('.btn-order');
+const Order=document.querySelector("#OrderPlaced");
+//--------------------VARIABLES-----
+var orderdetails;
+var OrderdItems=[];
+var charge=0,tax,discount=0;
+let itemsList;
+//--------------------------------------------------------------------------------------
+main();
+async function main(){
+   await fetchItems();
+}
+//-------------------EVENT LISTENERS-----
+btnClear.addEventListener("click",clear);
+BTNcurrent.addEventListener("click",()=>{currentDIV.classList.remove("model");
+orderDIV.classList.add("model")});
+BTNorder.addEventListener("click",()=>{orderDIV.classList.remove("model");
+currentDIV.classList.add('model');displayOrders()})
+
+//--------------------------------------------------------------------------------------
+async function fetchItems(){//fetch the items in menu
+    items=await fetch(ITEMS);
+    itemsList=await items.json();
+    displaymenu(itemsList);
+}
+
+function displaymenu(itemsList){
+   for(i in itemsList){
+    BlockRecipe.innerHTML+=`
+    <button class="recipie btn-${itemsList[i].id}" onclick="addBill(${itemsList[i].id})">
+    <h4>${itemsList[i].name}</h4>
+    <p>${itemsList[i].price}.00</p>
+    </button>`
+}
+}
+ async function addBill(i){
+    items=await fetch(`${ITEMS}/${i}`);
+    itemsList=await items.json();
+ console.log(itemsList);
+ OrderdItems.push({Item:itemsList.name,quantity:1,price:(itemsList.price),id:itemsList.id,Orderprice:itemsList.price});
+console.log(OrderdItems);
+ await displayBill(OrderdItems);
+document.querySelector(`.btn-${i}`).disabled=true;
+
+
+}
+
+ async function displayBill(OrderdItems){
+   BillBody.innerHTML="";
+for(j in OrderdItems){
+   BillBody.innerHTML+=`
+<tr>
+<td>${OrderdItems[j].Item}</td>
+<td><input type="text" id="r${OrderdItems[j].id}" oninput="quantity(${OrderdItems[j].id})" value="${OrderdItems[j].quantity}"</td>
+<td class="td-price">${OrderdItems[j].Orderprice}</td>
+</tr>`
+}
+totalcharge();
+}
+function totalcharge(){
+   charge=0,tax=0;
+   for(i in OrderdItems){
+      charge+=parseInt(OrderdItems[i].Orderprice);
+   
+   }
+   tax=(charge*0.04);
+   
+   charge+=tax;
+   discountbill();
+  
+   charge-=discount;
+   BillTotal.textContent=charge;
+   TAX.textContent=tax;
+console.log(charge);
+
+
+}
+function discountbill(){
+   let discountvalue=document.querySelector(".discount").value;
+   discount=(charge/100)*discountvalue;
+   console.log(discount);
+}
+
+
+function quantity(id){
+   
+   console.log(id);
+   var q=document.querySelector(`#r${id}`).value;
+   console.log(q);
+   for(i in OrderdItems){
+
+   if(OrderdItems[i].id==id){
+      
+      OrderdItems[i].quantity=q;
+      OrderdItems[i].Orderprice= (OrderdItems[i].quantity* OrderdItems[i].price);
+   }
+
+   }
+   totalcharge();
+   displayBill();
+   
+}
+Order.addEventListener('click',OrderPlaced);
+
+async  function OrderPlaced(){
+  
+    orderPlacment=await fetch(ORDER,{
+      method:"POST",
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+         "CustomerName":document.querySelector(".name").value,
+         "PhoneNumber":document.querySelector(".phone").value,
+         "Orderdetails":OrderdItems,
+         "OrderPrice":charge
+    })
+   });
+   clear();
+}
+
+function clear(){
+  
+   BillBody.innerHTML="";
+   for(i in OrderdItems){
+      document.querySelector(`.btn-${OrderdItems[i].id}`).disabled=false;
+   }
+   OrderdItems=[];
+   BillBody.innerHTML="";
+   charge=0,tax=0;
+   document.querySelector(".name").value="";
+   document.querySelector(".phone").value="";
+   displayBill();
+}
+
+async function displayOrders(){
+  
+let ordersdata=await fetch(ORDER);
+let orderdetails=await ordersdata.json();
+console.log(orderdetails);
+ORDERdetails.innerHTML='';
+for(let k in orderdetails){
+ORDERdetails.innerHTML+=`
+<tr>
+<td>${parseInt(k)+1}</td>
+<td>${orderdetails[k].CustomerName}</td>
+<td>${orderdetails[k].OrderPrice}</td>
+<td><button onclick="viewDetails(${orderdetails[k].id})">VIEW</button>
+<button id="cancel" onclick="Reorder(${orderdetails[k].id})">Re-Order</button></td>
+</tr>`
+}
+}
+     
+
+   
+async function viewDetails(orderid){
+   let detailsoforder= await fetch(`${ORDER}/${orderid}`);
+   let Orderdetails= await detailsoforder.json();
+
+  
+   console.log(Orderdetails);
+   CustomerDetails.innerHTML=`
+   <b>Name:</b>  <span class="name"> ${Orderdetails.CustomerName} <br>
+   <b>phone:</b> ${Orderdetails.PhoneNumber}<br>
+   <b> ITEMS:</b><br>
+  <span class="items"></span><br>
+  TAX(4% Gst.)
+  <b>Charge:</b>${Orderdetails.OrderPrice}<br>
+  <p>*taxes apply as per rules</p>
+
+   `;
+   for (i in Orderdetails.Orderdetails){
+      document.querySelector(`.items`).innerHTML+=`
+      
+         <b>${Orderdetails.Orderdetails[i].Item}</b>&nbsp&nbsp&nbsp&nbsp&nbsp
+          ${Orderdetails.Orderdetails[i].price}*${Orderdetails.Orderdetails[i].quantity}
+        =${Orderdetails.Orderdetails[i].Orderprice}<br>`;
+      
+      }
+}
+
+async function Reorder(id){
+console.log(id);
+
+
+
+}
