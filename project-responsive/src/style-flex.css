@@ -22,6 +22,7 @@
 p{
     color: var(--theam-color);
     margin: 0px;
+    font-size: small;
 }
 h1{font-size: 30px;}
 nav{
@@ -45,6 +46,7 @@ button{
     justify-content: space-between;
     padding: 20px;
     margin-bottom: 10px;
+    flex-flow: row wrap;
 }
 .pg-1-card{
     width: 250px;
@@ -54,7 +56,7 @@ button{
     margin: 5px;
 }
 .pg-1-content{
-    width: 50%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -62,7 +64,7 @@ button{
 .pg-2-main{
     margin: 10px 0 10px 0;
 }.pg-2-content{
-    width: 65%;
+    width: 95%;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -110,7 +112,9 @@ button svg{
     fill: #ffff;
     width: 37px;
 }
-.pg-3-main,.pg-4-main{margin-top: 50px;display: flex;flex-direction: row;justify-content: space-between;flex-wrap: wrap;padding: 20px;}
+.pg-3-main,.pg-4-main{margin-top: 50px;display: flex;flex-flow: row wrap;justify-content: space-between;flex-wrap: wrap;padding: 20px;}
+.pg-3-main{align-items: center;}
+
 .pg-3-card{
     width: 350px;
     margin: 20px;
@@ -119,7 +123,7 @@ button svg{
     background-color: #d1d4d9;
 }
 .pg-3-content{
-    width: 50%;
+    width: 95%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -136,30 +140,30 @@ button svg{
 }
 .pg-4-cards{
     display: flex;
-    flex-direction: row;
-    justify-content:space-between;
+    flex-flow: row wrap;
+    justify-content:space-evenly;;
 }
 .card-4{
-    width:200px
+    width: 200px;
+    margin: 10px;
 }
 .subcard-4{
-    width: 200px;
     height: 125px;
     border-radius: 5px;
     background-color: #d1d4d9;
 }
 .card-5{
     margin: 20px;
-    width:400px;
+    width: 400px;
     height: 200px;
     border-radius: 5px;
     background-color:#d1d4d9;
 }
 .pg-5-content{
-    width: 30%;
+    width: 75%;
     margin: 10px;
     display:flex;
-    flex-direction: column;
+    flex-flow: row wrap;
 }
 .radius{
     width: 60px;
@@ -174,7 +178,7 @@ button svg{
 .div-challenge{
     display: flex;
     margin: 31px 0;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-flow: row wrap;
 }
@@ -202,7 +206,7 @@ button svg{
     margin: 0;
     flex-flow: row wrap;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .partner-card{
     width: 180px;
@@ -253,4 +257,22 @@ hr{
     width: 60%;
     align-items: baseline;
     justify-content: space-around;
+}
+/* media queries for respnsive web lay out */
+
+@media only screen and (min-width:480px) {
+    .container{width:90%}
+    .card-5{width: 80%;}
+    .pg-2-cards{flex-flow: row wrap;}
+    .pg-3-content{flex-flow: row wrap;}
+}
+@media screen and (min-width:900px) {
+    .container{width:1000px}
+    .pg-3-content{flex-flow:row wrap;width: 50%;}
+    .card-5{width: 400px;}
+    .pg-1-content{width: 50%;}
+    .pg-2-content {width:60%}
+    p{font-size: 15px;}
+    .partners{justify-content: space-between;}
+    .pg-5-content { width: 30%;}
 }
